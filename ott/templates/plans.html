@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Plan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Set a dark blue background */
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Style the container */
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            color: #ff5733; /* ZEE5 Orange */
+        }
+        
+        /* Style the cards container */
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        /* Style the plan cards */
+        .plan-card {
+            background-color: #333; /* Dark gray background color */
+            color: #fff;
+            width: calc(33.33% - 40px); /* Adjust the width as needed */
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Card borders cut shape */
+        .plan-card::before,
+        .plan-card::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            border: 2px solid #ff5733; /* ZEE5 Orange */
+            z-index: 1;
+        }
+        
+        .plan-card::before {
+            left: -2px;
+            top: -2px;
+            border-right: none;
+            border-bottom: none;
+            transform: scaleY(0);
+        }
+        
+        .plan-card::after {
+            right: -2px;
+            bottom: -2px;
+            border-left: none;
+            border-top: none;
+            transform: scaleY(0);
+        }
+        
+        /* Card content */
+        .card-content {
+            margin-bottom: 20px;
+            /* Add your styles for card content here */
+        }
+        
+        /* Style the subscribe button */
+        .subscribe-button {
+            background-color: #ff5733; /* ZEE5 Orange */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .subscribe-button:hover {
+            background-color: steelblue; /* Slightly darker orange on hover */
+        }
+        
+
+
+
+    </style>
+    <div class="container">
+        <h1>Choose a Plan</h1>
+        <div class="cards-container">
+            <!-- Plan 1 -->
+            <div class="plan-card">
+                <h2>RECOMMENDED</h2>
+                <p>4K · Dolby 5.1 · Telugu + Tamil Movies & Web series · 1 Year</p>
+                <div class="plan-details">
+                    <p class="price">INR 899 / year <span class="original-price">₹1499</span></p>
+                    <br>
+                    <a href="{% url 'qr' %}"><button class="subscribe-button" >Subscribe</button></a>
+
+                </div>
+            </div>
+    
+            <!-- Plan 2 -->
+            <div class="plan-card">
+                <h2>NEW PLAN</h2>
+                <p>Telugu Annual Premium Plan</p>
+                <p>Full HD (1080p) · Stereo · Telugu Movies & Web series · 1 Year</p>
+                <div class="plan-details">
+                    <p class="price">INR 699 / year <span class="original-price">₹1299</span></p>
+                    <br>
+                    <a href="{% url 'qr' %}"><button class="subscribe-button" >Subscribe</button></a>
+
+
+
+                </div>
+            </div>
+    
+            <!-- Plan 3 -->
+            <div class="plan-card">
+                <h2>FIRST TIME ONLY</h2>
+                <p>Telugu Quarterly Mobile Plan</p>
+                <p>HD (720p) · Stereo · Telugu Movies & Web series · 3 Months · First time subscribers only</p>
+                <div class="plan-details">
+                    <p class="price">INR 99 / 3 months</p>
+                    <br>
+                    <a href="{% url 'qr' %}"><button class="subscribe-button" >Subscribe</button></a>
+
+
+                </div>
+            </div>
+    
+            <!-- Plan 4 -->
+            <div class="plan-card">
+                <h2>Save 43%</h2>
+                <p>Telugu Annual Plan</p>
+                <p>Full HD (1080p) · Stereo · Telugu Movies & Web series · 1 Year</p>
+                <div class="plan-details">
+                    <p class="price">INR 399 / year <span class="original-price">₹699</span></p>
+                    <br>
+                    <a href="{% url 'qr' %}"><button class="subscribe-button" >Subscribe</button></a>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+    <script >
+        function subscribeClicked() {
+            // Add your subscription logic here
+            // For example, you can display a message or perform an AJAX request to subscribe the user.
+            alert("You have been subscribed!"); // This is just a simple example; replace it with your actual logic.
+        }
+          
+    </script>
+</body>
+</html>
